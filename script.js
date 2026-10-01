@@ -78,23 +78,29 @@ function playRound(humanChoice, computerChoice){
         break;
 
         case 'rock2':
-            return 'Paper Covers Rock\n Computer Wins!!!';
+            computerScore++;
+            return 'Paper Covers Rock\n Computer Wins!!!';    
         break;
 
         case 'rock3':
+            humanScore++; 
             return "Rock Smashes Scissors \n Human Wins!!!:";
         break;
 
         case 'paper1':
+            humanScore++; 
             return "Paper Covers Rock\n Human Wins!!!!";
         break;
         case 'paper3':
+            computerScore++;
             return "Scissors Cuts Paper\n Computer Wins!!!"
         break;
         case 'scissors1':
+            computerScore++;
             return "Rock Smashes Scissors\nComputer Wins!!!";
         break;
         case 'scissors2':
+            humanScore++; 
             return "Scissors Cuts Paper\nHuman Wins!!!";
         break;
 
@@ -110,4 +116,4 @@ function playRound(humanChoice, computerChoice){
 
 //console.log();
 
-console.log("The Outcome of this game is " + playRound(humanChoice,computerChoice));
+console.log("The Outcome of this game is " + playRound(humanChoice,computerChoice)+ "\nThe game score is:\nHuman Score: " + humanScore + "\nComputer Score: " + computerScore);
