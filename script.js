@@ -74,7 +74,7 @@ console.log("Current Selection from both sides:\nHuman Selection: " +humanChoice
 
 function playGame(){
 
-
+//Does the decision making for both human and computer and also increments scores
 function playRound(humanChoice, computerChoice){
   
     switch(humanChoice + computerChoice){
@@ -118,12 +118,13 @@ function playRound(humanChoice, computerChoice){
 
 }
 
-while (round < 4){
+while (round < 4){ //repeats the game 5 times calling
     getHumanChoice();
     playRound(humanChoice,computerChoice);
     round++;
 }
 
+//Print out for final Score and Round Winner
 console.log("The Final Score is:\nHuman Score " + humanScore +"\n Computer Score: " + computerScore);
 if(humanScore > computerScore){
     console.log("Human Wins");
