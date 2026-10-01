@@ -57,9 +57,11 @@ function getHumanChoice(){
 
  //const humanChoice = getHumanChoice().toLowerCase();
 // Score Tracking 
-
+// Round Trackerx
 let humanScore = 0;
 let computerScore = 0;
+let round = 0;
+
 
 const humanChoice = getHumanChoice().toLowerCase();
 const computerChoice = getComputerChoice(1,4);
@@ -67,6 +69,11 @@ const computerChoice = getComputerChoice(1,4);
 //Playing a Single Round
 
 console.log("Current Selection from both sides:\nHuman Selection: " +humanChoice +"\nComputer Selection: " + computerChoice);
+
+
+
+function playGame(){
+
 
 function playRound(humanChoice, computerChoice){
   
@@ -111,9 +118,27 @@ function playRound(humanChoice, computerChoice){
 
 }
 
+while (round < 4){
+    getHumanChoice();
+    playRound(humanChoice,computerChoice);
+    round++;
+}
 
+console.log("The Final Score is:\nHuman Score " + humanScore +"\n Computer Score: " + computerScore);
+if(humanScore > computerScore){
+    console.log("Human Wins");
+}
+else if (computerScore > humanScore){
+    console.log("Computer Wins");
+}
+else{
+    console.log("It is a tie");
+}
 
+}
+
+playGame();
 
 //console.log();
 
-console.log("The Outcome of this game is " + playRound(humanChoice,computerChoice)+ "\nThe game score is:\nHuman Score: " + humanScore + "\nComputer Score: " + computerScore);
+//console.log("The Outcome of this game is " + playRound(humanChoice,computerChoice)+ "\nThe game score is:\nHuman Score: " + humanScore + "\nComputer Score: " + computerScore);
