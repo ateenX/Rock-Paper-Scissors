@@ -117,12 +117,13 @@ function playRound(humanChoice, computerChoice){
     }
 
 }
-
+/* 
 while (round < 4){ //repeats the game 5 times calling
     getHumanChoice();
     playRound(humanChoice,computerChoice);
     round++;
 }
+*/
 
 //Print out for final Score and Round Winner
 console.log("The Final Score is:\nHuman Score " + humanScore +"\n Computer Score: " + computerScore);
