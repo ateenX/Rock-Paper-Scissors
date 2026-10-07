@@ -29,7 +29,7 @@ function getHumanChoice(){
 
  //const humanChoice = getHumanChoice().toLowerCase();
 // Score Tracking 
-// Round Trackerx
+// Round Tracker
 let humanScore = 0;
 let computerScore = 0;
 let round = 0;
@@ -39,14 +39,15 @@ let computerChoice = '';
 //const humanChoice = getHumanChoice().toLowerCase();
 // computerChoice = getComputerChoice(1,4);
 
-//Playing a Single Round
-
-//console.log("Current Selection from both sides:\nHuman Selection: " +humanChoice +"\nComputer Selection: " + computerChoice);
 
 //Selecting the Div
 const container = document.querySelector('#displayResult');
 
 const pContent = document.createElement("p");
+const pAnouncment = document.createElement("p");
+const playerWin = document.createElement("p");
+const compWin = document.createElement("p");
+
 
 
 //Does the decision making for both human and computer and also increments scores
@@ -104,39 +105,30 @@ function playRound(humanChoice, computerChoice){
             console.log("Please check your input and try agin");
 
     }
+}
 
-    if(round >= 3){
+function winnerAnouncement (){
+        pAnouncment.textContent = "Round " + round;
+        container.appendChild(pAnouncment);
+     if(round >= 5){
         if(humanScore > computerScore)
             {
             console.log("Human Wins");
+            playerWin.textContent = "Your Score: " + humanScore + "\t Computer Score: " + computerScore + "\n You WIN";
+            container.appendChild(playerWin);
             }
         else if (computerScore > humanScore){
             console.log("Computer Wins");
+            compWin.textContent = "Your Score: " + humanScore + "\t Computer Score: " + computerScore + "\n You LOSE";
+            container.appendChild(compWin);
             }
         else{
         console.log("It is a tie");
+        "IT is a TIE, Restart Game";
             }
     }
-    
-
-
 }
-/* 
-while (round < 4){ //repeats the game 5 times calling
-    getHumanChoice();
-    playRound(humanChoice,computerChoice);
-    round++;
-}
-*/
 
-//Print out for final Score and Round Winner
-//console.log("The Final Score is:\nHuman Score " + humanScore +"\n Computer Score: " + computerScore);
-/*
-
-*/
-
-
-//playGame();
 
 let playerSelection = document.querySelector('#option');
 
@@ -148,10 +140,12 @@ playerSelection.addEventListener('click', function(event)
         case 'rock':
             console.log('Rock button was clicked');
             humanChoice = 'rock';
+            console.log('this is the current value of the round counter= ' + round);
             console.log(humanChoice);
             computerChoice = getComputerChoice(1,4);
             console.log(computerChoice);
             playRound(humanChoice,computerChoice);
+            winnerAnouncement();
             break;
         case 'paper':
             console.log('Paper button was clicked');
@@ -159,6 +153,7 @@ playerSelection.addEventListener('click', function(event)
             computerChoice = getComputerChoice(1,4);
             console.log(computerChoice);
             playRound(humanChoice,computerChoice);
+            winnerAnouncement();
             break;
         case 'scissors':
             console.log('Scissor button was clicked');
@@ -166,13 +161,7 @@ playerSelection.addEventListener('click', function(event)
             computerChoice = getComputerChoice(1,4);
             console.log(computerChoice);
             playRound(humanChoice,computerChoice);
+            winnerAnouncement();
             break;
     }
 });
-
-
-
-
-//console.log();
-
-//console.log("The Outcome of this game is " + playRound(humanChoice,computerChoice)+ "\nThe game score is:\nHuman Score: " + humanScore + "\nComputer Score: " + computerScore);
