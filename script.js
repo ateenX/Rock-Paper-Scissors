@@ -3,37 +3,16 @@
 /* Pseudocode - Rock Paper Scissor
 
 
+//Create Function getComputerChoice 
 
-//Ask user to start game:
 
-Display instruction and ask user for input between 1-3.
+// Function to get human choice
+/*Display instruction and ask user for input between 1-3.
 1 == Rock
 2 == Paper
 3 == Scissors
 
-Save players input in userSelection
-
-Generate a random number between 1-3 and save in computerSelection
-
-Switch Statement to compare both parties selections and output a result
-    Case 1 (usrSel == Rock and cpSel == Rock)
-        Output it is a tie
-    Case 2 (usrSel == Rock and cpSel == Paper)
-        Output Paper Covers Rock
-    Case 3 (usrSel == Rock and cp Sel == Scissors)
-        Output Rock Smashes Scissors
-    Case 4 (usrSel == Paper and cp Sel == Rock)
-        Output Paper Covers Rock
-    Case 5 (usrSel == Paper and cp Sel == Scissors)
-        Output Scissors Cuts Paper
-    Case 6 (usrSel == Papper and cp Sel == Scissors)
-
-
-Run a for loop 
-
-*/
-
-//Create Function getComputerChoice 
+Save players input in userSelection */
 
 function getComputerChoice(min,max){
    //return Math.random() * (max-min) + min;  
@@ -43,13 +22,6 @@ function getComputerChoice(min,max){
     
 }
 
-// Function to get human choice
-/*Display instruction and ask user for input between 1-3.
-1 == Rock
-2 == Paper
-3 == Scissors
-
-Save players input in userSelection */
 
 function getHumanChoice(){
     return prompt("Please select the following inputs ; \nRock \nPaper\nScissors");
@@ -148,12 +120,16 @@ playerSelection.addEventListener('click', function(event)
     switch(target.id){
         case 'rock':
             console.log('Rock button was clicked');
+            humanChoice = 'rock';
+            playRound();
             break;
         case 'paper':
             console.log('Paper button was clicked');
+            humanChoice = 'paper';
             break;
         case 'scissors':
             console.log('Scissor button was clicked');
+            humanChoice = 'scissors';
             break;
     }
 });
