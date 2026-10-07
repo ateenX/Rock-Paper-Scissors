@@ -63,16 +63,14 @@ let computerScore = 0;
 let round = 0;
 
 
-const humanChoice = getHumanChoice().toLowerCase();
-const computerChoice = getComputerChoice(1,4);
+//const humanChoice = getHumanChoice().toLowerCase();
+//const computerChoice = getComputerChoice(1,4);
 
 //Playing a Single Round
 
-console.log("Current Selection from both sides:\nHuman Selection: " +humanChoice +"\nComputer Selection: " + computerChoice);
+//console.log("Current Selection from both sides:\nHuman Selection: " +humanChoice +"\nComputer Selection: " + computerChoice);
 
 
-
-function playGame(){
 
 //Does the decision making for both human and computer and also increments scores
 function playRound(humanChoice, computerChoice){
@@ -137,9 +135,30 @@ else{
     console.log("It is a tie");
 }
 
-}
 
-playGame();
+
+//playGame();
+
+let playerSelection = document.querySelector('#option');
+
+playerSelection.addEventListener('click', function(event)
+{
+    let target = event.target;
+
+    switch(target.id){
+        case 'rock':
+            console.log('Rock button was clicked');
+            break;
+        case 'paper':
+            console.log('Paper button was clicked');
+            break;
+        case 'scissors':
+            console.log('Scissor button was clicked');
+            break;
+    }
+});
+
+
 
 //console.log();
 
